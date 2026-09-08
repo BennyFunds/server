@@ -11,7 +11,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors());
+   app.use(cors({
+     origin: 'https://novabank-tan.vercel.app'
+   }));
 
 // ===== TEST ROUTE =====
 app.get('/api/ping', (req, res) => {
